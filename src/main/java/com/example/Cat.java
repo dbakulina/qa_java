@@ -10,6 +10,8 @@ public class Cat {
         this.predator = feline;
     }
 
+
+
     public String getSound() {
         return "Мяу";
     }
