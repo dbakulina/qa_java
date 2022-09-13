@@ -9,16 +9,10 @@ import static org.junit.Assert.*;
 public class FelineTest {
 
     @Test
-    public void eatMeat() {
+    public void eatMeat() throws Exception {
         Feline feline = new Feline();
-
-        List<String> actual = null;
-        try {
-            actual = feline.eatMeat();
-            System.out.println(actual);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        List<String> actual = feline.eatMeat();
+        System.out.println(actual);
         assertEquals(List.of("Животные", "Птицы", "Рыба"),actual);
     }
 
