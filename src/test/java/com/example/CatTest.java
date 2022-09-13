@@ -25,7 +25,6 @@ public class CatTest {
         List<String> actual = cat.getFood();
         assertEquals(List.of("Животные", "Птицы", "Рыба"),actual);
     }
-
     @Test
 
     public void catGetSoundTest() {
@@ -33,6 +32,5 @@ public class CatTest {
 
         String actual = cat.getSound();
         assertEquals("Мяу",actual);
-
     }
 }
