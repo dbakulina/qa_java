@@ -23,14 +23,14 @@ public class LionTest {
     public void lionGetKittens() throws Exception {
         Lion lion = new Lion("Самка",feline);
         int expected = 1;
-        Mockito.when(lion.getKittens()).thenReturn(1);
+        Mockito.when(feline.getKittens()).thenReturn(1);
         int actual = lion.getKittens();
         assertEquals(expected,actual);
     }
     @Test
     public void isLionHaveMainMan() throws Exception {
         Lion lion = new Lion("Самец",feline);
-        //Mockito.when(lion.doesHaveMane()).thenReturn(true);
+        Mockito.when(lion.doesHaveMane()).thenReturn(true);
         boolean actual = lion.doesHaveMane();
         assertEquals(true,actual);
     }
