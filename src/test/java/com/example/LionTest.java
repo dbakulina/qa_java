@@ -18,15 +18,12 @@ public class LionTest {
     private String sex;
 
     @Test
-
     public void lionFoodTest() throws Exception {
         Lion lion = new Lion("Самка",feline);
-
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        Mockito.when(lion.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> actual = lion.getFood();
         assertEquals(expected,actual);
-
     }
 
     @Test
