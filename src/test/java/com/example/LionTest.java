@@ -1,11 +1,9 @@
 package com.example;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -17,11 +15,12 @@ import static org.junit.Assert.fail;
 public class LionTest {
     @Mock
     Feline feline;
+    private String sex;
 
     @Test
 
     public void lionFoodTest() throws Exception {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion("Самка",feline);
 
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(lion.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
@@ -33,8 +32,7 @@ public class LionTest {
     @Test
 
     public void lionGetKittens() throws Exception {
-        Lion lion = new Lion(feline);
-
+        Lion lion = new Lion("Самка",feline);
         int expected = 1;
         Mockito.when(lion.getKittens()).thenReturn(1);
         int actual = lion.getKittens();
@@ -44,7 +42,7 @@ public class LionTest {
 
     @Test
     public void isLionHaveMainMan() throws Exception {
-        Lion lion = new Lion("Самец");
+        Lion lion = new Lion("Самец",feline);
 
         //Mockito.when(lion.doesHaveMane()).thenReturn(true);
         boolean actual = lion.doesHaveMane();
@@ -53,7 +51,7 @@ public class LionTest {
 
     @Test
     public void isLionHaveMainWoman() throws Exception {
-        Lion lion = new Lion("Самка");
+        Lion lion = new Lion("Самка",feline);
         boolean actual = lion.doesHaveMane();
         assertEquals(false,actual);
     }

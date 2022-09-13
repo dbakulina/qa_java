@@ -21,13 +21,12 @@ public class CatTest {
 
     public void catGetFoodTest() throws Exception {
         Cat cat = new Cat(feline);
-        List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        Mockito.when(cat.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> actual = cat.getFood();
-        assertEquals(expected,actual);
+        assertEquals(List.of("Животные", "Птицы", "Рыба"),actual);
 
     }
-
+//Замечание 2 закоммитить
     @Test
 
     public void catGetSoundTest() {

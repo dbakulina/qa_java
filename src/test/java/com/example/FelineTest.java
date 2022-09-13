@@ -15,6 +15,7 @@ public class FelineTest {
         List<String> actual = null;
         try {
             actual = feline.eatMeat();
+            System.out.println(actual);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -4,10 +4,10 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
-
 
 
     @RunWith(Parameterized.class)
@@ -16,6 +16,8 @@ import static org.junit.Assert.assertEquals;
         public final String sex;
         public final boolean result;
         private ExpectedException thrown;
+        @Mock
+        Feline feline;
 
 
         public LionParamTest(String sex, boolean result) {
@@ -35,7 +37,8 @@ import static org.junit.Assert.assertEquals;
 
         @Test
         public void isLionHaveMain() throws Exception {
-            Lion lion = new Lion (sex);
+
+            Lion lion = new Lion (sex,feline);
             assertEquals(result, lion.doesHaveMane());
 
         }
